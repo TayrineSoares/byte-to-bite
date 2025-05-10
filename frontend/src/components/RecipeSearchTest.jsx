@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 
 const RecipeSearchTest = () => {
 
+  const [inputValue, setInputValue] = useState(''); // Store user input
   const [recipes, setRecipes] = useState([]); 
   const [error, setError] = useState('');
 
   // Fake ingredients array to simulate user input
-  const ingredients = ['eggs', 'bacon'];
+  const ingredients = ['rice', 'mushorrom'];
 
   // Function to fetch recipes based on ingredients 
   const fetchRecipes = async () => {
@@ -35,6 +36,18 @@ const RecipeSearchTest = () => {
 
   return (
     <div>
+      <form onSubmit={(event) => event.preventDefault()}> 
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+          placeholder="Enter ingredients (comma separated)"
+        />
+        <br/>
+        <button type="submit">Search</button>
+
+
+      </form>
 
       {/* Display fetched recipes */}
       <ul>

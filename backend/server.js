@@ -37,7 +37,7 @@ app.get('/api/recipes', async (req, res) => {
     const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
       params: {
         ingredients: ingredients, // ingredients passed from frontend
-        number: 3, // Number of recipes to fetch
+        number: 5, // Number of recipes to fetch
         apiKey: apiKey // API key from environment
       }
     });
