@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 const RecipeSearchTest = () => {
 
@@ -6,12 +6,12 @@ const RecipeSearchTest = () => {
   const [recipes, setRecipes] = useState([]); 
   const [error, setError] = useState('');
 
-  // Fake ingredients array to simulate user input
-  const ingredients = ['rice', 'mushorrom'];
 
-  // Function to fetch recipes based on ingredients 
-  const fetchRecipes = async () => {
-    const ingredientsString = ingredients.join(','); 
+
+  const handleSubmit = async (event) => {
+    event.preventDefault(); // stop the page from refreshing
+
+    const ingredientsString = inputValue; 
     //console.log(ingredientsString);
 
     try {
@@ -29,23 +29,19 @@ const RecipeSearchTest = () => {
     }
   };
 
-  // Trigger the API call when the component mounts 
-  useEffect(() => {
-    fetchRecipes();
-  }, []); // Empty array means it runs only once when the component is mounted
-
   return (
     <div>
-      <form onSubmit={(event) => event.preventDefault()}> 
+   
+      <form onSubmit={handleSubmit} className="flex flex-col space-y-4 max-w-sm mx-auto mt-10"> 
         <input
           type="text"
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
           placeholder="Enter ingredients (comma separated)"
+          className="p-3 border border-gray-300 rounded-md shadow-sm text-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
         <br/>
-        <button type="submit">Search</button>
-
+        <button type="submit" className="p-3 bg-blue-500 rounded-md hover:bg-blue-600 transition">Search</button>
 
       </form>
 
