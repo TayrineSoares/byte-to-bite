@@ -5,9 +5,8 @@ function RecipeCard({ recipe }) {
   return (
     <div className="recipe-card">
       <div>
-        <strong>Name:</strong>
         <a target="_blank" rel="noopener noreferrer" href={recipe?.sourceUrl}>
-          {recipe?.title}
+          <strong>{recipe?.title}</strong>
         </a>
       </div>
       <div className="recipe-content">
@@ -17,7 +16,7 @@ function RecipeCard({ recipe }) {
         {/* Ingredients */}
         {recipe?.usedIngredients?.length > 0 && (
           <div className="ingredients">
-            <strong>Ingredients Used:</strong>
+            <strong>Ingredients From Search:</strong>
             <ul>
               {recipe.usedIngredients.map((ingredient, i) => (
                 <li key={i}>{ingredient.name}</li>
