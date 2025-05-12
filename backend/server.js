@@ -37,12 +37,13 @@ app.get('/api/recipes', async (req, res) => {
     const response = await axios.get('https://api.spoonacular.com/recipes/findByIngredients', {
       params: {
         ingredients: ingredients, // ingredients passed from frontend
-        number: 2, // Number of recipes to fetch
+        number: 5, // Number of recipes to fetch
         apiKey: apiKey // API key from environment
       }
     });
 
     // Return the Spoonacular response data (recipes) back to the frontend
+    console.log(response)
     res.json(response.data);
 
     // If an error occurs (e.g., bad API key, network issue), log and respond with 500
