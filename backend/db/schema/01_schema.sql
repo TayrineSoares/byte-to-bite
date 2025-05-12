@@ -16,7 +16,8 @@ CREATE TABLE users (    -- To save user session for saved recipes/pantry
 CREATE TABLE user_ingredients ( -- Ingredients used for search
   id SERIAL PRIMARY KEY,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
-  ingredient_name TEXT NOT NULL
+  ingredient_name TEXT NOT NULL,
+  is_pantry_staple BOOLEAN
 )
 
 CREATE TABLE saved_recipes ( -- To save favorited recipe ID from API 

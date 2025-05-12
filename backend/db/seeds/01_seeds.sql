@@ -6,10 +6,10 @@ VALUES
 -- Insert user_ingredients
 INSERT INTO user_ingredients (user_id, ingredient_name, is_pantry_staple)
 VALUES
-  (1, "chicken"),
-  (1, "rice"),
-  (1, "salt"),
-  (1, "pepper");
+  (1, "chicken", FALSE),
+  (1, "rice", FALSE),
+  (1, "salt", TRUE),
+  (1, "pepper", TRUE);
 
 INSERT INTO saved_recipes (user_id, recipe_id, title, image_url, instructions, ingredients, is_favorited)
 VALUES
