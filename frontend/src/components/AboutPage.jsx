@@ -19,7 +19,7 @@ const AboutPage = () => {
           </p>
 
           <p>
-            We’re passionate about using technology to make cooking smarter and more sustainable — one byte at a time.
+            We're passionate about using technology to make cooking smarter and more sustainable — one byte at a time.
 
           </p>
 
